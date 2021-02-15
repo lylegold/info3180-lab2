@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Lyle-Anthony Golding">
+
+    <title>Lab 2 Flask App</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    {% block css %} {% endblock%}
+  </head>
+  <body>
+    <header>
+        {% include "header.html" %}
+    </header>
+    <main>
+        <div>
+            {% block main %}
+            
+            <div class="head">
+                <img alt="ProfilePicture" src="{{ url_for('static', filename='profilepic.jpg') }}"/>
+                
+                <br/>
+                <h2>Lyle Golding</h2>
+                <h5>@lylegold
+                    <br/>
+                    Montego Bay, Jamaica
+                    <br/>
+                    {{ joineddate }}
+                </h5>
+            </div>
+            
+            <div class="bio">
+                <h3>I am an aspiring journalist who is pursuing an I.T Degree. Nothing about me is normal!</h3>
+                
+                <br/>
+                <span>
+                    <h3>14</h3>
+                    Posts
+                </span>
+                
+                <span id="middle">
+                    <h3>480</h3>
+                    Following
+                </span>
+                
+                <span>
+                    <h3>720</h3>
+                    Followers
+                </span>
+                
+                <br/>
+                <a href="https://www.instagram.com"><input type="button" class="button" value="Follow"></a>
+            </div>
+            
+            {% endblock %}
+        </div>
+    </main>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    {% block js %} {% endblock%}
+  </body>
+</html>
